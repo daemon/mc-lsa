@@ -1,0 +1,20 @@
+name: MCLSA
+main: net.rocketeer.mclsa.LsaPlugin
+version: 0.0.1
+depend: [WorldEdit]
+commands:
+    add:
+        description: Add cuboid selection to analysis
+        usage: /add
+        permission: mclsa
+        permission-message: No permission.
+    printinfo:
+        description: Print similarity matrix to console
+        usage: /info
+        permission: mclsa
+        permission-message: No permission.
+    compute:
+        description: Compute low-rank approximation
+        usage: /compute
+        permission: mclsa
+        permission-message: No permission.
