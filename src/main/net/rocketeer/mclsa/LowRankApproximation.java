@@ -12,9 +12,10 @@ public class LowRankApproximation {
     this.rank = rank;
     this.svd = new SingularValueDecomposition(matrix);
     RealMatrix sigma = this.svd.getS();
-    for (int i = sigma.getColumnDimension() - rank; i < sigma.getColumnDimension(); ++i)
-      this.svd.getS().setEntry(i, i, 0);
-    this.lowRankApprox = this.svd.getU().multiply(this.svd.getS()).multiply(this.svd.getVT());
+    for (int i = rank; i < sigma.getColumnDimension(); ++i)
+      sigma.setEntry(i, i, 0);
+    sigma.walkInRowOrder(new PrettyPrintingMatrixVisitor("Sigma"));
+    this.lowRankApprox = this.svd.getU().multiply(sigma).multiply(this.svd.getVT());
   }
 
   public int rank() {

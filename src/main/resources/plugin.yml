@@ -3,17 +3,32 @@ main: net.rocketeer.mclsa.LsaPlugin
 version: 0.0.1
 depend: [WorldEdit]
 commands:
-    add:
+    lsaquery:
+        description: Queries store
+        usage: /lsaquery
+        permission: mclsa
+        permission-message: No permission.
+    lsasave:
+        description: Saves current workspace
+        usage: /lsasave
+        permission: mclsa
+        permission-message: No permission.
+    lsaload:
+        description: Loads saved workspace
+        usage: /lsaload
+        permission: mclsa
+        permission-message: No permission.
+    lsaadd:
         description: Add cuboid selection to analysis
         usage: /add
         permission: mclsa
         permission-message: No permission.
-    printinfo:
+    lsaprint:
         description: Print similarity matrix to console
         usage: /info
         permission: mclsa
         permission-message: No permission.
-    compute:
+    lsacompute:
         description: Compute low-rank approximation
         usage: /compute
         permission: mclsa
